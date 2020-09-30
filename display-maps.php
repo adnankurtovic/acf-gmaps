@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: ACF Google maps 
-Description: Display Google maps with marker using shortcode. Location saved in ACF custom field [dir_single_marker]
+Description: Display Google maps with marker using shortcode. Location saved in ACF custom field named "location". Shortcode to display map: [acfgmaps_single_marker]
 */
 
 add_action( 'wp_enqueue_scripts', 'dir_google_map_script' ); // Firing the JS and API
@@ -11,10 +11,10 @@ function dir_google_map_script() {
 	wp_enqueue_script( 'google-api', 'https://maps.googleapis.com/maps/api/js?key=GOOGLEMAPSAPIKEY', null, null, true); // Replace GOOGLEMAPSAPIKEY with your Google Maps API key (https://developers.google.com/maps/documentation/javascript/get-api-key)
 }
 
-add_shortcode( 'dir_single_marker', 'dir_single_marker' ); // Create shortcode [dir_single_marker]
+add_shortcode( 'acfgmaps_single_marker', 'acfgmaps_single_marker' ); // Create shortcode [acfgmaps_single_marker]
 
 // ACF Google Map Single Map Output
-function dir_single_marker() {
+function acfgmaps_single_marker() {
         ob_start();
         $location = get_field('location');  // Set the ACF location field to a variable. You have to create ACF location field named "location" before activating the plugin
 
