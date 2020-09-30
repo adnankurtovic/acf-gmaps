@@ -7,8 +7,10 @@ Description: Display Google maps with marker using shortcode. Location saved in 
 add_action( 'wp_enqueue_scripts', 'dir_google_map_script' ); // Firing the JS and API
 // Enqueue Google Map scripts
 function dir_google_map_script() {
+    $acf_gmaps_options = get_option( 'acf_gmaps_option_name' ); // Array of All Options
+    $google_maps_api_key = $acf_gmaps_options['google_maps_api_key']; // Google Maps API key
 	wp_enqueue_script( 'google-map', plugin_dir_url( __FILE__ ) . 'assets/maps.js', array( 'jquery' ), '1.0.0', true );
-	wp_enqueue_script( 'google-api', 'https://maps.googleapis.com/maps/api/js?key=GOOGLEMAPSAPIKEY', null, null, true); // Replace GOOGLEMAPSAPIKEY with your Google Maps API key (https://developers.google.com/maps/documentation/javascript/get-api-key)
+	wp_enqueue_script( 'google-api', 'https://maps.googleapis.com/maps/api/js?key=$google_maps_api_key', null, null, true); 
 }
 
 add_shortcode( 'acfgmaps_single_marker', 'acfgmaps_single_marker' ); // Create shortcode [acfgmaps_single_marker]
