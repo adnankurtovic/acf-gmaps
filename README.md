@@ -1,7 +1,7 @@
 # acf-gmaps
 WordPress plugin for displaying Google Maps and a marker which location is stored in custom field (ACF)
 
-Usage:
+Instructions:
   1. Install and activate Advanced Custom Fields WordPress plugin (https://wordpress.org/plugins/advanced-custom-fields/)
   2. Create a new custom field "location"
   3. On a post where you want to display Google map, set location
