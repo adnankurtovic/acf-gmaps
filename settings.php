@@ -1,5 +1,11 @@
+<?php
 class ACFGmaps {
 	private $acf_gmaps_options;
+	
+	function dbi_add_settings_page() {
+		add_options_page( 'Example plugin page', 'Example Plugin Menu', 'manage_options', ‘dbi-example-plugin’, 'dbi_render_plugin_settings_page' );
+	}
+	add_action( 'admin_menu', 'dbi_add_settings_page' );
 
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'acf_gmaps_add_plugin_page' ) );
