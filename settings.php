@@ -3,7 +3,7 @@ class ACFGmaps {
 	private $acf_gmaps_options;
 	
 	function dbi_add_settings_page() {
-		add_options_page( 'Example plugin page', 'Example Plugin Menu', 'manage_options', ‘dbi-example-plugin’, 'dbi_render_plugin_settings_page' );
+		add_options_page( 'ACFGmaps plugin page', 'ACFGmaps Plugin Menu', 'manage_options', ‘dbi-example-plugin’, 'dbi_render_plugin_settings_page' );
 	}
 	add_action( 'admin_menu', 'dbi_add_settings_page' );
 
